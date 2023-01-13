@@ -12,23 +12,23 @@ body{
     line-height: 1px;
   }
   
-  .text-primary {
+  .text-prim {
     color: #666666;
   }
   
-  .text-blue {
+  .text-bl {
     color: #246dec;
   }
   
-  .text-red {
+  .text-r {
     color: #cc3c43;
   }
   
-  .text-green {
+  .text-gr {
     color: #367952;
   }
   
-  .text-orange {
+  .text-oran {
     color: #f5b74f;
   }
   
@@ -76,8 +76,10 @@ body{
     color: #9799ab;
     overflow-y: auto;
     -webkit-transition: all 0.5s;
-    transition: all 0.5s;
+    transition: all 0.5s ;
+
 }
+
 
 .sidebar-title{
   display: flex;
@@ -103,6 +105,20 @@ body{
   margin-top: 15px;
 }
 
+.btn{
+  color: #9799ab ;
+  padding: 0;
+}
+
+.right-icon{
+  transition: all ease .2s;
+}
+
+.btn[aria-expanded="true"] .right-icon{
+  transform: rotate(180deg);
+}
+
+
 .sidebar-list-item{
   padding: 20px;
 }
@@ -116,6 +132,7 @@ body{
   display: inline !important;
   position: absolute;
 }
+
 
 /* ----------MAIN---------- */
 .main-container{
@@ -158,7 +175,7 @@ body{
 }
 
 .card:nth-child(2){
-  border-left: 7px solid #f5b74f;
+  border-left: 7px solid #f5b74f; 
 }
 
 .card:nth-child(3){
@@ -181,7 +198,7 @@ body{
 }
 
 .card-inner > p {
-  font-size: 16px;
+  font-size: 13px;
 }
 
 .card-inner > span {
@@ -212,3 +229,69 @@ body{
   font-size: 20px;
   font-weight: 600;
 } 
+
+
+/* ---------- MEDIA QUERIES ---------- */
+
+/* Medium <= 992px */
+@media screen and (max-width: 992px){
+  .grid-container{
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas: 
+    "header"
+    "main";
+  }
+
+  #sidebar{
+    display: none;
+    z-index: 999;
+  }
+
+
+  .menu-icon > span{
+    display: inline;
+    cursor: pointer;
+  }
+
+  .sidebar-title > span {
+    display: inline;
+    cursor: pointer;
+  }
+}
+
+/* Extra Medium <=907px */
+@media screen and (max-width: 907px){
+  .main-cards{
+    flex-direction: column;
+    align-items: stretch;
+    margin: 0 2em;
+  }
+
+  .card{
+    flex-basis: 4em;
+  }
+  
+  .card-inner > p {
+    font-size: 15px;
+  }
+
+  .charts{
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+  }
+}
+
+/* Small <=768px */
+@media screen and (max-width: 768px){
+  .main-cards{
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .card{
+    flex-basis: 10em;
+  }
+
+}
+
